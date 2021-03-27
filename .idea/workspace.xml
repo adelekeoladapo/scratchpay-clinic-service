@@ -30,12 +30,13 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dto" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/service" />
+      <recent name="$PROJECT_DIR$/dto" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/service" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,9 +47,13 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2593" y="419" width="564" height="423" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616864904893">
+    <state x="2593" y="419" width="614" height="430" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616876081832">
       <screen x="1920" y="87" width="1920" height="1080" />
     </state>
-    <state x="2593" y="419" width="564" height="423" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053/1920.87.1920.1080@1920.87.1920.1080" timestamp="1616864904893" />
+    <state x="2593" y="419" width="614" height="430" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053/1920.87.1920.1080@1920.87.1920.1080" timestamp="1616876081832" />
+    <state x="2663" y="385" width="424" height="491" key="FileChooserDialogImpl" timestamp="1616881886185">
+      <screen x="1920" y="87" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="385" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053/1920.87.1920.1080@1920.87.1920.1080" timestamp="1616881886185" />
   </component>
 </project>

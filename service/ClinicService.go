@@ -1,6 +1,8 @@
 package service
 
-import "scratchpay.com/clinics/dto"
+import (
+	"scratchpay.com/clinics/dto"
+)
 
 type ClinicService interface {
 

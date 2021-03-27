@@ -1,13 +1,14 @@
 package main
 
 import (
-	"github.com/labstack/echo/v4"
-	"github.com/joho/godotenv"
 	"fmt"
+	"github.com/joho/godotenv"
+	"github.com/labstack/echo/v4"
 	"log"
 	"net/http"
 	"scratchpay.com/clinics/controller"
 )
+
 
 func main() {
 	e := echo.New()
@@ -28,3 +29,4 @@ func main() {
 	})
 	e.Logger.Fatal(e.Start(":8090"))
 }
+

@@ -18,6 +18,8 @@ func Search(c echo.Context) error {
 	state := c.QueryParam("state")
 	from := c.QueryParam("from")
 	to := c.QueryParam("to")
+	//fromTime := utils.ParseTime(from)
+	//toTime := utils.ParseTime(to)
 	response, err := clinicService.Search(name, state, from, to)
 	if err != nil {
 		fmt.Println("An error occurred.", err.Error())
