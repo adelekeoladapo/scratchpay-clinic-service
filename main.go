@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"scratchpay.com/clinics/controller"
 )
 
 func main() {
@@ -21,6 +22,9 @@ func main() {
 	/* App Router */
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello ScratchPay")
+	})
+	e.GET("/api/v1/clinic/search", func(context echo.Context) error {
+		return controller.Search(context)
 	})
 	e.Logger.Fatal(e.Start(":8090"))
 }

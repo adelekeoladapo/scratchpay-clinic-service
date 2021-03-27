@@ -3,7 +3,7 @@ package dto
 type ClinicDto struct {
 	Name			string			`json:"name"`
 	State 			string 			`json:"state"`
-	Availability	Availability	`son:"availability"`
+	Availability	Availability	`json:"availability"`
 }
 
 type Availability struct {
