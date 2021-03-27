@@ -6,6 +6,7 @@ import (
 	"scratchpay.com/clinics/service"
 	"scratchpay.com/clinics/utils"
 	"scratchpay.com/clinics/utils/message"
+	"sort"
 	"strings"
 )
 
@@ -35,6 +36,7 @@ func (clinicServiceImpl ClinicServiceImpl) Search(name, state, from, to string) 
 
 
 func filter(list []dto.ClinicDto, name, stateCode, from, to string) []dto.ClinicDto {
+	sort.Sort(dto.ByName(list))
 	filtered := make([]dto.ClinicDto, 0)
 	for _, value := range list {
 		if (strings.Contains(strings.ToLower(value.Name), strings.ToLower(name))) && (stateCode == "" || strings.EqualFold(stateCode, value.State) || strings.EqualFold(utils.GetStateNameFromCode(stateCode), value.State)) && ((from == "" || from >= value.Availability.From) && (from == "" || from <= value.Availability.To)) && (to == "" || to <= value.Availability.To) {
