@@ -18,8 +18,9 @@ Install Docker</p>
 <p>Step 2: Run <b><i>docker images</i></b> to see the list of all docker images on the machine, the image of this project should have been created.</p>
 <p>Step 3. Run <b><i>docker run -d -p 8090:8090 scratchpay-clinics-service</i></b> to run the generated image in a container. The image runs on port 8090 of the host machine. </p>
 <p>It exposes a GET endpoint with the details below:</p>
-URL: http://localhost:8090/api/v1/clinic/search <br />
-Query Parameters
+<b>URL</b>: <a href="http://localhost:8090/api/v1/clinic/search">http://localhost:8090/api/v1/clinic/search</a> <br />
+<b>Method</b>: GET <br />
+<b>Query Parameters</b>
 <ul>
     <li><b>name</b>: Name of clinic (ex: City Vet). Optional </li>
     <li><b>state</b>: State code (ex: CA). Optional</li>
