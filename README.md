@@ -21,12 +21,12 @@ Install Docker</p>
 URL: http://localhost:8090/api/v1/clinic/search <br />
 Query Parameters
 <ul>
-    <li>name: Name of clinic (ex: City Vet). Optional </li>
-    <li>state: State code (ex: CA). Optional</li>
-    <li>from: Opening time (ex: 08:00). Optional</li>
-    <li>to: Closing time (ex: 17:00). Optional</li>
-    <li>page: Page number (ex: 1. Default=1). Optional</li>
-    <li>limit: Number of items per page (ex: 5. Default=10). Optional</li>
+    <li><b>name</b>: Name of clinic (ex: City Vet). Optional </li>
+    <li><b>state</b>: State code (ex: CA). Optional</li>
+    <li><b>from</b>: Opening time (ex: 08:00). Optional</li>
+    <li><b>to</b>: Closing time (ex: 17:00). Optional</li>
+    <li><b>page</b>: Page number (ex: 1. Default=1). Optional</li>
+    <li><b>limit</b>: Number of items per page (ex: 5. Default=10). Optional</li>
 </ul>
 <p>Sample URL: <b><i>http://localhost:8090/api/v1/clinic/search?state=FL&from=18:00&to=17:00&page=1&limit=5</i></b></p>
 
