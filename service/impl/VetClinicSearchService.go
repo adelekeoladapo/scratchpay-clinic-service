@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"scratchpay.com/clinics/dto"
+	"scratchpay.com/clinics/utils"
 	"time"
 )
 
@@ -27,7 +28,7 @@ func (vet VetClinicSearchService) GetClinicList() ([]dto.ClinicDto, error)  {
 		body, _ := ioutil.ReadAll(res.Body)
 		json.Unmarshal(body, &data)
 		for _, v := range data {
-			list = append(list, dto.ClinicDto{Name: v.Name, State: v.State, Availability: v.Availability})
+			list = append(list, dto.ClinicDto{Name: v.Name, State: utils.GetStateNameFromCode(v.State), Availability: v.Availability})
 		}
 		return list, nil
 	} else {

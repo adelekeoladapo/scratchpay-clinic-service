@@ -40,7 +40,7 @@ func sortFilterAndPaginate(list []dto.ClinicDto, name, stateCode, from, to strin
 	sort.Sort(dto.ByName(list))
 	filtered := make([]dto.ClinicDto, 0)
 	for _, value := range list {
-		if (strings.Contains(strings.ToLower(value.Name), strings.ToLower(name))) && (stateCode == "" || strings.EqualFold(stateCode, value.State) || strings.EqualFold(utils.GetStateNameFromCode(stateCode), value.State)) && ((from == "" || from >= value.Availability.From) && (from == "" || from <= value.Availability.To)) && (to == "" || to <= value.Availability.To) {
+		if (strings.Contains(strings.ToLower(value.Name), strings.ToLower(name))) && (stateCode == "" || strings.EqualFold(utils.GetStateNameFromCode(stateCode), value.State)) && ((from == "" || from >= value.Availability.From) && (from == "" || from <= value.Availability.To)) && (to == "" || to <= value.Availability.To) {
 			filtered = append(filtered, dto.ClinicDto{Name: value.Name, State: value.State, Availability: value.Availability})
 		}
 	}
