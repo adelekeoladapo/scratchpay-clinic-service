@@ -12,9 +12,9 @@ import (
 	"time"
 )
 
-type VetClinicSearchService struct {}
+type VetClinicListService struct {}
 
-func (vet VetClinicSearchService) GetClinicList() ([]dto.ClinicDto, error)  {
+func (vet VetClinicListService) GetClinicList() ([]dto.ClinicDto, error)  {
 	list := make([]dto.ClinicDto, 0)
 	url := os.Getenv("VET_CLINIC_URL")
 	httpClient := http.Client{Timeout: 5 * time.Second}

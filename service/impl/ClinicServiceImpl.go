@@ -12,8 +12,8 @@ import (
 
 type ClinicServiceImpl struct {}
 
-var dental service.ClinicSearchService = DentalClinicSearchService{}
-var vet service.ClinicSearchService = VetClinicSearchService{}
+var dental service.ClinicListService = DentalClinicListService{}
+var vet service.ClinicListService = VetClinicListService{}
 
 func (clinicServiceImpl ClinicServiceImpl) Search(name, state, from, to string, page, limit int) (dto.ListResponse, error)  {
 	list := make([]dto.ClinicDto, 0)

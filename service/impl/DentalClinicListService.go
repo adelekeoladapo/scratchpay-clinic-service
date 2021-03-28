@@ -11,9 +11,9 @@ import (
 	"time"
 )
 
-type DentalClinicSearchService struct {}
+type DentalClinicListService struct {}
 
-func (dental DentalClinicSearchService) GetClinicList() ([]dto.ClinicDto, error) {
+func (dental DentalClinicListService) GetClinicList() ([]dto.ClinicDto, error) {
 	list := make([]dto.ClinicDto, 0)
 	url := os.Getenv("DENTAL_CLINIC_URL")
 	httpClient := http.Client{Timeout: 5 * time.Second}
