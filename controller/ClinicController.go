@@ -32,7 +32,7 @@ func Search(c echo.Context) error {
 	response, err := clinicService.Search(name, state, from, to, page, limit)
 	if err != nil {
 		fmt.Println("An error occurred.", err.Error())
-		return c.JSON(http.StatusOK, dto.ServiceResponse{Status: responseStatus.ERROR, Message: err.Error()})
+		return c.JSON(http.StatusInternalServerError, dto.ServiceResponse{Status: responseStatus.ERROR, Message: message.GENERAL_SUCCESS_MESSAGE + err.Error()})
 	}
 	return c.JSON(http.StatusOK, dto.ServiceResponse{Status: responseStatus.SUCCESS, Message: message.GENERAL_SUCCESS_MESSAGE, Data: response})
 }

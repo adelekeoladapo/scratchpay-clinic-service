@@ -26,6 +26,7 @@ func (clinicServiceImpl ClinicServiceImpl) Search(name, state, from, to string, 
 func initClinicList(f func() ([]dto.ClinicDto, error), c chan []dto.ClinicDto) {
 	if list, err := f(); err != nil {
 		fmt.Println(message.GENERAL_ERROR_MESSAGE, err.Error())
+		c <- []dto.ClinicDto{}
 	} else {
 		c <- list
 	}
