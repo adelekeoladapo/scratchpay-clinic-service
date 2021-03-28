@@ -30,12 +30,12 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dto" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/dto" />
       <recent name="$PROJECT_DIR$/service" />
     </key>
   </component>
