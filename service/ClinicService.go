@@ -6,6 +6,6 @@ import (
 
 type ClinicService interface {
 
-	Search(clinicName, state, from, to string) ([]dto.ClinicDto, error)
+	Search(clinicName, state, from, to string, page, limit int) ([]dto.ClinicDto, error)
 
 }
