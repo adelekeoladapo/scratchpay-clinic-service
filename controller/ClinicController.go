@@ -28,9 +28,7 @@ func Search(c echo.Context) error {
 		log.Println("Limit not set.", err.Error())
 		limit = 10
 	}
-
-
-
+	log.Printf("name:%s, state: %s, from: %s, to: %s, page: %d, limit: %d", name, state, from, to, page, limit)
 	response, err := clinicService.Search(name, state, from, to, page, limit)
 	if err != nil {
 		fmt.Println("An error occurred.", err.Error())

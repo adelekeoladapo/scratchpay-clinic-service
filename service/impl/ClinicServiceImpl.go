@@ -16,24 +16,20 @@ var dental service.ClinicListService = DentalClinicListService{}
 var vet service.ClinicListService = VetClinicListService{}
 
 func (clinicServiceImpl ClinicServiceImpl) Search(name, state, from, to string, page, limit int) (dto.ListResponse, error)  {
-	list := make([]dto.ClinicDto, 0)
-	fmt.Printf("GetClinicList for name:%s, state: %s, from: %s, to: %s, page: %d, limit: %d", name, state, from, to, page, limit)
-	fmt.Println()
-
-	if dentalClinicList, err := dental.GetClinicList(); err != nil {
-		fmt.Println(message.GENERAL_ERROR_MESSAGE, err.Error())
-	} else {
-		list = append(list, dentalClinicList...)
-	}
-	if vetClinicList, err := vet.GetClinicList(); err != nil {
-		fmt.Println(message.GENERAL_ERROR_MESSAGE, err.Error())
-	} else {
-		list = append(list, vetClinicList...)
-	}
+	ch := make(chan []dto.ClinicDto, 0)
+	go initClinicList(dental.GetClinicList, ch)
+	go initClinicList(vet.GetClinicList, ch)
+	list := append(<-ch, <-ch...)
 	return sortFilterAndPaginate(list, name, state, from, to, page, limit), nil
 }
 
-
+func initClinicList(f func() ([]dto.ClinicDto, error), c chan []dto.ClinicDto) {
+	if list, err := f(); err != nil {
+		fmt.Println(message.GENERAL_ERROR_MESSAGE, err.Error())
+	} else {
+		c <- list
+	}
+}
 
 func sortFilterAndPaginate(list []dto.ClinicDto, name, stateCode, from, to string, page, limit int) dto.ListResponse {
 	response := dto.ListResponse{Page: page, Limit: limit}
@@ -45,6 +41,7 @@ func sortFilterAndPaginate(list []dto.ClinicDto, name, stateCode, from, to strin
 		}
 	}
 	response.Total = len(filtered)
+	if limit > response.Total { limit = response.Total }
 	filtered = filtered[(page-1)*limit:(page*limit)]
 	response.Data = filtered
 	return response
